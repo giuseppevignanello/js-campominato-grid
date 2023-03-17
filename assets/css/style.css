@@ -2,4 +2,12 @@
     width: calc(100%/10); 
     aspect-ratio: 1;
     border: 1px solid;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg_lightblue {
+    background-color: lightblue
 }
