@@ -7,6 +7,7 @@
 
 const playBtnEl = document.querySelector(".play_btn");
 const selectEl = document.querySelector(".form-select")
+const footerEl = document.getElementById("app_footer")
 //take container from DOM
 
 
@@ -22,18 +23,17 @@ playBtnEl.addEventListener("click",
 
         if (selectEl.value === "easy") {
 
-            innerGridToContainer(100, "bg_lightblue", "easy")
+            innerSquareGridToContainer(100, "bg_lightblue", "easy")
 
         } else if (selectEl.value === "medium") {
 
-            innerGridToContainer(81, "bg_lightblue", "medium")
+            innerSquareGridToContainer(81, "bg_lightblue", "medium")
         } else if (selectEl.value === "hard") 
         {
-            innerGridToContainer(49, "bg_lightblue", "hard")
+            innerSquareGridToContainer(49, "bg_lightblue", "hard")
         }
 
-
-
+        footerEl.innerHTML = "<span> Created by Giuseppe Vignanello</span>"
 
 
     }
@@ -47,7 +47,7 @@ playBtnEl.addEventListener("click",
 
 // function to create grid
 
-function innerGridToContainer(maxCellNumb, bgColor, difficulty) {
+function innerSquareGridToContainer(maxCellNumb, bgColor, difficulty) {
     const containerEl = document.querySelector(".container")
 
     //create a for loop to create cells "cell's max number" times
