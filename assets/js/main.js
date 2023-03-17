@@ -4,12 +4,41 @@
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 // take play btn from DOM 
+
+const playBtnEl = document.querySelector(".play_btn");
+
 //take container from DOM
+
+const containerEl = document.querySelector(".container")
 //create a const for the max cell's number
+
+const maxCellNumb = 100; 
 // addEventListener on play button
+
+playBtnEl.addEventListener( "click", 
+
+    function() {
     //create a for loop to create cells "max cell's number's" times
-        //appen the i value to the cell 
-        //append the cell to the containerEL 
+        
+        for (let i = 1; i <= maxCellNumb; i++) {
+            const cellEl = `<div class="cell"></div>`
+
+            //append the i value to the cell 
+            console.log (i);
+            cellEl.innerText = str(i); 
+
+            //append the cell to the containerEL  
+
+            containerEl.innerHTML += cellEl; 
+            
+        }
+        
+        
+
+
+    }
+)
+   
 
 // take all the cells from the DOM
 // create a for to 
