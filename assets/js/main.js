@@ -6,63 +6,83 @@
 // take play btn from DOM 
 
 const playBtnEl = document.querySelector(".play_btn");
-
+const selectEl = document.querySelector(".form-select")
 //take container from DOM
 
-const containerEl = document.querySelector(".container")
+
 //create a const for the cell's max number
 
-const maxCellNumb = 100;
+// const maxCellNumb = 100;
 // addEventListener on play button
 
 
 playBtnEl.addEventListener("click",
 
     function () {
-        //create a for loop to create cells "cell's max number" times
 
-        for (let i = 1; i <= maxCellNumb; i++) {
-            const cellEl = `<div class="cell"></div>`
+        if (selectEl.value === "easy") {
 
-            // //log the i value to the cell 
-            // console.log(i);
+            innerGridToContainer(100, "bg_lightblue", "easy")
 
-            //append the cell to the containerEL  
+        } else if (selectEl.value === "medium") {
 
-            containerEl.innerHTML += cellEl;
+            innerGridToContainer(81, "bg_lightblue", "medium")
+        } else if (selectEl.value === "hard") 
+        {
+            innerGridToContainer(49, "bg_lightblue", "hard")
         }
 
-        // take all the cells from the DOM
-
-        const cells = document.querySelectorAll(".cell");
-        // create a for to 
-
-        for (let i = 0; i < cells.length; i++) {
-            
-            const thisCell = cells[i];
-            thisCell.append (i + 1)
-            // add the click event to each cell 
-
-            thisCell.addEventListener("click",
-                // change the bg color with classList 
-               
-                function () {
-                    thisCell.classList.toggle("bg_lightblue");
-                    console.log(i + 1);
-                   
-
-
-                }
-            )
-
-        }
 
 
 
 
     }
-
 )
+
+
+
+
+
+
+
+// function to create grid
+
+function innerGridToContainer(maxCellNumb, bgColor, difficulty) {
+    const containerEl = document.querySelector(".container")
+
+    //create a for loop to create cells "cell's max number" times
+    for (let i = 1; i <= maxCellNumb; i++) {
+        const cellEl = `<div class="cell ${difficulty}"></div>`
+        containerEl.innerHTML += cellEl;
+    }
+
+    // take all the cells from the DOM
+    const cells = document.querySelectorAll(".cell");
+    // create a for to 
+
+    for (let i = 0; i < cells.length; i++) {
+
+        const thisCell = cells[i];
+        thisCell.append(i + 1)
+        // add the click event to each cell 
+
+        thisCell.addEventListener("click",
+            // change the bg color with classList 
+
+            function () {
+                thisCell.classList.toggle(bgColor);
+                console.log(i + 1);
+
+
+
+            }
+        )
+
+    }
+
+
+
+}
 
 
 
