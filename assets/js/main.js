@@ -6,8 +6,9 @@
 // take play btn from DOM 
 
 const playBtnEl = document.querySelector(".play_btn");
-const selectEl = document.querySelector(".form-select")
-const footerEl = document.getElementById("app_footer")
+const selectEl = document.querySelector(".form-select");
+const footerEl = document.getElementById("app_footer");
+const mainEl = document.getElementById("app_main");
 //take container from DOM
 
 
@@ -33,7 +34,8 @@ playBtnEl.addEventListener("click",
             innerSquareGridToContainer(49, "bg_lightblue", "hard")
         }
 
-        footerEl.innerHTML = "<span> Created by Giuseppe Vignanello</span>"
+        footerEl.innerHTML = "<span> Created by Giuseppe Vignanello</span>";
+        mainEl.classList.add("py-4")
 
 
     }
