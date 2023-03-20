@@ -50,7 +50,8 @@ playBtnEl.addEventListener("click",
 // function to create grid
 
 function innerSquareGridToContainer(maxCellNumb, bgColor, difficulty) {
-    const containerEl = document.querySelector(".container")
+    const containerEl = document.querySelector(".container");
+    containerEl.innerHTML = ""
 
     //create a for loop to create cells "cell's max number" times
     for (let i = 1; i <= maxCellNumb; i++) {
